@@ -32,10 +32,10 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Marcellus&family=Jost:wght@200;300;400;500&family=Noto+Sans+Malayalam:wght@300;400;500&display=swap">
 
   <!-- Critical media only: cover, intro video, hero -->
-  <link rel="preload" as="image" href="assets/images/cover/cover.png" fetchpriority="high">
+  <link rel="preload" as="image" href="open.webp" fetchpriority="high" type="image/webp">
   <link rel="preload" as="video" href="vedio.mp4" type="video/mp4">
   <link rel="preload" as="audio" href="assets/audio/audio.mp3" type="audio/mpeg">
-  <link rel="preload" as="image" href="hero.png">
+  <link rel="preload" as="image" href="hero.webp" type="image/webp">
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/scenes.css">
@@ -142,9 +142,12 @@
      ============================================================ -->
   <section id="landing" class="scene--screen" aria-label="Wedding invitation cover">
     <div class="landing-media">
-      <img id="coverImg" class="cover-img section-bg" src="open.png"
-        data-fallbacks="assets/images/cover/cover.webp,assets/images/cover/cover.jpg" alt="" decoding="async"
-        fetchpriority="high">
+      <picture>
+        <source srcset="open.webp" type="image/webp">
+        <img id="coverImg" class="cover-img section-bg" src="open.png"
+          data-fallbacks="open.png" alt="" decoding="async"
+          fetchpriority="high">
+      </picture>
       <div class="cover-fallback" aria-hidden="true"></div>
     </div>
 
@@ -219,6 +222,7 @@
     <!-- Image fills the whole screen; content sits in that image's safe centre -->
     <section id="hero" class="scene scene--screen scene--hero" aria-busy="true">
       <picture class="section-bg">
+        <source srcset="hero.webp" type="image/webp">
         <img id="heroImg" class="section-bg" src="hero.png" data-candidates="hero.png" alt="Unais Navas &amp; Amina S"
           width="1080" height="1920" decoding="async" fetchpriority="high">
       </picture>
